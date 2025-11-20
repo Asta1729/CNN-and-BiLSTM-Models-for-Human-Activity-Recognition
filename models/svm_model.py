@@ -43,7 +43,6 @@ def train_svm():
     y_pred = svm.predict(X_test)
     evaluate_model(y_test, y_pred, "Support Vector Machine (SVM)")
 
-    #return accuracy_score(y_test, y_pred)
 
 if __name__ == "__main__":
     train_svm()

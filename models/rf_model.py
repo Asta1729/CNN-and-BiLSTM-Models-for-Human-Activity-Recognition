@@ -44,7 +44,6 @@ def train_random_forest():
     rf.fit(X_train, y_train.values.ravel())
     y_pred = rf.predict(X_test)
     evaluate_model(y_test, y_pred, "Random Forest")
-    #return accuracy_score(y_test, y_pred)
 
 if __name__ == "__main__":
     train_random_forest()

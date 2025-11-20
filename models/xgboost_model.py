@@ -56,7 +56,6 @@ def train_xgboost():
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     evaluate_model(y_test, y_pred, "XGBoost")
-    #return accuracy_score(y_test, y_pred)
 
 
 if __name__ == "__main__":
