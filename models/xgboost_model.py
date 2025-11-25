@@ -25,7 +25,7 @@ def load_data_xgb():
     X_test.columns = features
     y_test = pd.read_csv(os.path.join(test_path, "y_test.txt"), sep="\s+", header=None, names=["Activity"])
 
-    # Adjust activity labels to be zero-based
+    
     y_train["Activity"] = y_train["Activity"] - 1
     y_test["Activity"]  = y_test["Activity"] - 1
 
@@ -35,7 +35,7 @@ def load_data_xgb():
 def train_xgboost():
     X_train, X_test, y_train, y_test = load_data_xgb()
 
-    # Convert to numpy arrays
+    
     y_train = y_train.squeeze()
     y_test = y_test.squeeze()
 
