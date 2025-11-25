@@ -41,8 +41,19 @@ def train_svm():
 
     svm.fit(X_train, y_train)
     y_pred = svm.predict(X_test)
-    evaluate_model(y_test, y_pred, "Support Vector Machine (SVM)")
+    return accuracy_score(y_test, y_pred)
 
+def evaluate_svm():
+    X_train, X_test, y_train, y_test = load_data_svm()
+    svm = SVC(
+        C=1.0,
+        kernel="rbf",
+        gamma="scale",
+        decision_function_shape="ovr"
+    )
+    svm.fit(X_train, y_train)
+    y_pred = svm.predict(X_test)
+    evaluate_model(y_test, y_pred, "Support Vector Machine (SVM)")
 
 if __name__ == "__main__":
     train_svm()

@@ -43,6 +43,20 @@ def train_random_forest():
 
     rf.fit(X_train, y_train.values.ravel())
     y_pred = rf.predict(X_test)
+    return accuracy_score(y_test, y_pred)
+
+def evaluate_random_forest():
+    X_train, X_test, y_train, y_test = load_data_rf()
+    rf = RandomForestClassifier(
+    n_estimators=351,        
+    max_depth=30,
+    max_features= 'log2',     
+    min_samples_split=8,
+    min_samples_leaf=2,
+    random_state=42,
+    n_jobs=-1)
+    rf.fit(X_train, y_train.values.ravel())
+    y_pred = rf.predict(X_test)
     evaluate_model(y_test, y_pred, "Random Forest")
 
 if __name__ == "__main__":

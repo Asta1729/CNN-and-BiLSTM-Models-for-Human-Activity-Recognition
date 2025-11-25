@@ -55,8 +55,23 @@ def train_xgboost():
 
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
-    evaluate_model(y_test, y_pred, "XGBoost")
 
+    return accuracy_score(y_test, y_pred)   
+
+def evaluate_xgboost():
+    X_train, X_test, y_train, y_test = load_data_xgb()
+    model = XGBClassifier(
+        n_estimators=200,
+        learning_rate=0.05,
+        max_depth=8,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        eval_metric="mlogloss",
+        tree_method="hist",
+        random_state=42)
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    evaluate_model(y_test, y_pred, "XGBoost")
 
 if __name__ == "__main__":
     train_xgboost()
