@@ -60,6 +60,14 @@ def train_xgboost():
 
 def evaluate_xgboost():
     X_train, X_test, y_train, y_test = load_data_xgb()
+
+    # convert to numpy arrays
+    X_train = X_train.values
+    X_test = X_test.values
+
+    y_train = y_train.squeeze()
+    y_test = y_test.squeeze()
+
     model = XGBClassifier(
         n_estimators=200,
         learning_rate=0.05,
@@ -68,7 +76,9 @@ def evaluate_xgboost():
         colsample_bytree=0.8,
         eval_metric="mlogloss",
         tree_method="hist",
-        random_state=42)
+        random_state=42
+    )
+
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     evaluate_model(y_test, y_pred, "XGBoost")
