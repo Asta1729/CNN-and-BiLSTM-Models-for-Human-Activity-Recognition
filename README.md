@@ -1,11 +1,8 @@
 # DeepHAR: CNN & BiLSTM Based Human Activity Recognition
 
-![Project Banner](https://img.icons8.com/color/452/artificial-intelligence.png)
-
 This repository presents **DeepHAR**, a comprehensive comparison of **classical machine learning** and **deep learning** approaches for **Human Activity Recognition (HAR)** using the **UCI HAR Dataset**. The dataset contains smartphone accelerometer and gyroscope time-series signals from 30 participants performing six daily activities.
 
 DeepHAR implements:
-
 * Random Forest
 * SVM
 * XGBoost
@@ -41,7 +38,7 @@ Activity-Recognition/
 
 ---
 
-## 📊 Models Implemented
+##  Models Implemented
 
 ### Classical Machine Learning
 
@@ -58,11 +55,11 @@ All classical models use the provided **561 engineered features**, while deep ne
 
 ---
 
-## 🏆 Model Accuracy Comparison
+##  Model Accuracy Comparison
 
 | Model         | Accuracy   |
 | ------------- | ---------- |
-| **CNN**       | **0.9576** |
+| **CNN1D**     | **0.9576** |
 | SVM           | 0.9505     |
 | Random Forest | 0.9413     |
 | XGBoost       | 0.9325     |
@@ -70,9 +67,9 @@ All classical models use the provided **561 engineered features**, while deep ne
 
 ---
 
-## 🧠 CNN Architecture
+##  CNN1D Architecture
 
-The CNN architecture used in this project consists of:
+The CNN1D architecture used in this project consists of:
 
 * **Conv1D (kernel size = 3) → ReLU**
 * **MaxPooling1D (pool size = 2)**
@@ -84,13 +81,13 @@ This lightweight architecture effectively captures temporal patterns in sensor d
 
 ---
 
-## 📐 CNN Architecture Diagram
+##  CNN Architecture Diagram
 
 ![CNN Architecture](cnn_architecture.png)
 
 ---
 
-## 📈 Dataset Information
+##  Dataset Information
 
 * 30 subjects performing **6 activities**
 * Sampling frequency: **50 Hz**
@@ -109,7 +106,7 @@ Activities:
 
 ---
 
-## ▶️ Running the Models
+##  Running the Models
 
 ### Install dependencies
 
@@ -131,7 +128,7 @@ Run the notebooks in the **notebooks/** directory.
 
 ---
 
-## 📊 Confusion Matrices & Metrics
+##  Confusion Matrices & Metrics
 
 All evaluation metrics (accuracy, classification reports, and confusion matrices) are saved in the **results/** folder.
 
@@ -143,7 +140,7 @@ The evaluation utility automatically generates:
 
 ---
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 * Hybrid CNN–LSTM architecture
 * Train on raw inertial signals instead of engineered features
@@ -153,15 +150,9 @@ The evaluation utility automatically generates:
 
 ---
 
-## 📝 License
+##  License
 
 MIT License
 
 ---
 
-## 🏷️ GitHub Tags
-
-```
-#HumanActivityRecognition #DeepLearning #MachineLearning 
-#CNN #LSTM #XGBoost #UCIHAR #TimeSeries #SignalProcessing
-```
