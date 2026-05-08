@@ -40,7 +40,7 @@ Activity-Recognition/
 
 ##  Models Implemented
 
-### Classical Machine Learning
+### Machine Learning
 
 * Random Forest
 * Support Vector Machine
